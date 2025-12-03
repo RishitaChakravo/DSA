@@ -32,7 +32,8 @@ int binaryapproach(vector<int> nums, int target) {
 }
 
 int main() {
-    vector<int> nums = {2,2,2,2,3,2};
-    cout << binaryapproach(nums, 3);
+    vector<int> nums = {1,0,1,1,1};
+    // the program broke in this case without the special case
+    cout << binaryapproach(nums, 0);
     return 0;
 }
