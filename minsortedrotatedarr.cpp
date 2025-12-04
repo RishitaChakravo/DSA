@@ -1,12 +1,19 @@
 #include<iostream>
 #include<vector>
 #include<cmath>
+
 using namespace std;
+
 int binaryapproach(vector<int>nums) {
     int low = 0, high = nums.size() - 1;
     int mini = INT8_MAX;
     while(low <= high) {
         int mid = (low + high) / 2;
+        
+        if(nums[low] <= nums[high]) {
+            mini = min(mini, nums[low]);
+            break;
+        }
         
         if(nums[low] <= nums[mid]) {
             mini = min(mini, nums[low]);
@@ -19,7 +26,7 @@ int binaryapproach(vector<int>nums) {
     return mini;
 }
 int main() {
-    vector<int> nums = {4,5,6,7,0,1,2};
+    vector<int> nums = {7,6,5,4,3,2,1};
     cout << binaryapproach(nums);
     return 0;
 }
