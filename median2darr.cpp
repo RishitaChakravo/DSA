@@ -18,6 +18,11 @@ int median2Darr_brute(vector<vector<int>> nums) {
 
     return new_arr[(n*m)/2];
 }
+
+int median2Darr_binary() {
+
+}
+
 int main() {
     vector<vector<int>> nums = {{1,5,7,9,11},{2,3,4,5,10},{9,10,12,14,16}};
     cout << median2Darr_brute(nums);
