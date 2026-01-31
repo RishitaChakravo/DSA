@@ -85,6 +85,20 @@ Node* segregate_better(Node* head) {
     return head;
 }
 
+Node* segregate_optimal(Node* head) {
+    Node* odd = head;
+    Node* even = head -> next;
+    Node* evenhead = head -> next;
+    while(even != NULL && even -> next != NULL) {
+        odd -> next = odd -> next -> next;
+        even -> next = even -> next -> next;
+        odd = odd -> next;
+        even = even -> next;
+    }
+    odd -> next = evenhead;
+    return head;
+}
+
 int main() {
     Node* head = new Node(1);
     Node* sec = new Node(2);
@@ -99,8 +113,8 @@ int main() {
     fr -> next = fve;
     fve -> next = six;
 
-    Node* segregated = segregate(head);
     print(head);
+    Node* segregated = segregate_optimal(head);
     print(segregated);
     return 0;
 }
